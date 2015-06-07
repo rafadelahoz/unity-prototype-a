@@ -3,6 +3,9 @@ using System.Collections;
 
 public class Slingshot : MonoBehaviour {
 
+	// Singleton
+	static Slingshot SlingshotInstance;
+
 	// Fields set in the Inspector Pane
 	public GameObject prefabProjectile;
 	public float velocityMult = 4f;
@@ -17,6 +20,8 @@ public class Slingshot : MonoBehaviour {
 	
 	void Awake()
 	{
+		SlingshotInstance = this;
+
 		Transform launchPointTransform = transform.Find ("LaunchPoint");
 		launchPoint = launchPointTransform.gameObject;
 		launchPoint.SetActive (false);
@@ -79,4 +84,7 @@ public class Slingshot : MonoBehaviour {
 		}
 	}
 
+	public static Vector3 getLaunchPoint() {
+		return SlingshotInstance.launchPoint.transform.position;
+	}
 }

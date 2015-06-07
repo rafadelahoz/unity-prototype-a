@@ -22,11 +22,25 @@ public class FollowCam : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		if (target == null)
-			return;
+		Vector3 destination;
 
-		// Follow target
-		Vector3 destination = target.transform.position;
+		if (target == null) {
+			// No target -> Return to the origin
+			destination = Vector3.zero;
+		} else {
+			// Follow the current target
+			destination = target.transform.position;
+
+			// If it is a Projectile and it has stopped, don't follow it anymore
+			if (target.tag == "Projectile") {
+				Rigidbody rbody = target.GetComponent<Rigidbody>();
+				if (rbody.IsSleeping () || rbody.velocity.magnitude == 0) {
+					target = null;
+					return;
+				}
+			}
+		}
+
 		// Correct the position with the Min X Y
 		destination.x = Mathf.Max (minXY.x, destination.x);
 		destination.y = Mathf.Max (minXY.y, destination.y);
