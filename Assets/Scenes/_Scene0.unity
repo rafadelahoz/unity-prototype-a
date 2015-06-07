@@ -246,6 +246,33 @@ Halo:
     serializedVersion: 2
     rgba: 4292006610
   m_Size: 1
+--- !u!1 &1003092510
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1003092511}
+  m_Layer: 0
+  m_Name: CloudAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1003092511
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1003092510}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.40076137, y: 1.53704059, z: 6.60009766}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!1 &1096086151
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,8 +542,9 @@ GameObject:
   - 124: {fileID: 2119061382}
   - 81: {fileID: 2119061381}
   - 114: {fileID: 2119061386}
+  - 114: {fileID: 2119061387}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: _Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -603,3 +631,28 @@ MonoBehaviour:
   ___________: 0
   target: {fileID: 0}
   camZ: 0
+--- !u!114 &2119061387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2119061380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf4454867258646418656e472d8d3bf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numClouds: 40
+  cloudPrefabs:
+  - {fileID: 178576, guid: 7d157195cbbce4032b724b92dfd5bc6e, type: 2}
+  - {fileID: 178576, guid: 90f9c73a44d684dd899ef0f21a25bcf9, type: 2}
+  - {fileID: 178576, guid: 3cbb03627d1ec426db8afd807051b648, type: 2}
+  - {fileID: 178576, guid: 0bf964fbb2d3e4e9fa83c58a9caa2cf0, type: 2}
+  - {fileID: 178576, guid: 2795654f152404d8e85a41856596ecef, type: 2}
+  cloudPosMin: {x: -50, y: -5, z: 10}
+  cloudPosMax: {x: 150, y: 100, z: 10}
+  cloudScaleMin: 1
+  cloudScaleMax: 5
+  cloudSpeedMult: .5
+  ______________________________: 0
+  cloudInstances: []
